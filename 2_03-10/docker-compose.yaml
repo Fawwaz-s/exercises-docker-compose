@@ -1,0 +1,14 @@
+services:
+  frontend:
+    build:
+      context: ../example-app
+      dockerfile: frontend/Dockerfile.frontend
+    ports:
+      - "5001:5001"
+
+  backend:
+    build:
+      context: ../example-app
+      dockerfile: backend/Dockerfile.backend
+    ports:
+      - "8080:8080"
