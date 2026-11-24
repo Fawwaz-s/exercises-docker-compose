@@ -10,5 +10,12 @@ services:
     build:
       context: ../example-app
       dockerfile: backend/Dockerfile.backend
+    environment:
+      - REDIS_HOST=redis
+    depends_on:
+      - redis
     ports:
       - "8080:8080"
+
+  redis:
+    image: redis:alpine
